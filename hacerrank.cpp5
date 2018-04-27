@@ -1,0 +1,48 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include<map>
+using namespace std;
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    long long int q,y,x,z;
+    cin>>q;
+    map<string,int> mapp;
+    map<string,int>::iterator it;
+    string s;
+    while(q--)
+    {
+        cin>>y;
+        if(y==1)
+        {
+            cin>>s>>x;
+            //z=mapp[s]+x;
+            mapp[s]=mapp[s]+x;
+        }
+        else if(y==2)
+        {
+            cin>>s;
+            mapp.erase(s);
+        }
+        else
+        {
+            cin>>s;
+            it=mapp.find(s);
+            if(it!=mapp.end())
+            {
+                    cout<<it->second;
+                
+            }
+            else
+            {
+                cout<<0;
+            }
+            cout<<"\n";
+        }
+    }
+    return 0;
+}
