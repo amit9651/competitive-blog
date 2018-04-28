@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    int n,x;
+    cin>>n;
+    map<int,int> dp;
+    map<int,int>::iterator it;
+    for(int i=0;i<n;i++)
+    {
+        cin>>x;
+        dp[x]++;
+    }
+    long long int pair=0;
+    for(it=dp.begin();it!=dp.end();it++)
+    {
+        pair=pair+(it->second)/2;
+    }
+    cout<<pair;
+    return 0;
+    
+}
